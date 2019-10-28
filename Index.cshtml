@@ -1,0 +1,62 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+@if (User.IsInRole("admin"))
+{
+    <section>
+        <h1> Welcome,Adminstrator!</h1>
+    </section>
+}
+else if (User.IsInRole("slt"))
+{
+    <section>
+        <h1> Welcome,slt!</h1>
+    </section>
+}
+else if (User.IsInRole("depthead"))
+{
+    <section>
+        <h1> Welcome,depthead!</h1>
+    </section>
+}
+else
+{
+    <section>
+        <h1> Welcome.</h1>
+    </section>
+}
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: deeppink;
+        padding: 10px;
+    }
+
+    .grid-item {
+        background-color: rgba(255,255,255,0.8);
+        border: 1px solid rgba(0,0,0,0.8);
+        padding: 10px;
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">Candy</div>
+        <div class="grid-item">starburst</div>
+        <div class="grid-item">skittles</div>
+        <div class="grid-item">hershey</div>
+        <div class="grid-item">starburst</div>
+        <div class="grid-item">starburst</div>
+
+    </div>
+</body>
+
+
+
+
